@@ -1,0 +1,14 @@
+<h1>Items</h1>
+<a href="/items/new">New Item</a>
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <a href="/items/<%= item.id %>"><%= item.name %></a>
+      <a href="/items/<%= item.id %>/edit">Edit</a>
+      <form action="/items/<%= item.id %>" method="POST" style="display:inline">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+      </form>
+    </li>
+  <% end %>
+</ul>

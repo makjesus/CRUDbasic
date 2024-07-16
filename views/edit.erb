@@ -1,0 +1,10 @@
+<h1>Edit Item</h1>
+<form action="/items/<%= @item.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="<%= @item.name %>"><br>
+  <label for="description">Description:</label>
+  <textarea name="description" id="description"><%= @item.description %></textarea><br>
+  <input type="submit" value="Update">
+</form>
+<a href="/">Back</a>
